@@ -1,0 +1,7 @@
+.idea/
+build/
+.vscode/
+*.o
+*.a
+*.so
+comple_commands.json
