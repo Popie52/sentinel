@@ -1,8 +1,14 @@
 #include <iostream>
+#include "../include/cli_parser.hpp"
 
-using namespace std;
+int main(int argc, char** argv) {
+    auto config = parse_arguments(argc, argv);
 
-int main() {
-    cout << "Senitel Starting...\n";
+    if(!config) {
+        return 1;
+    }
+
+    std::cout << "Target: " << config->target << '\n';
+
     return 0;
 }
