@@ -13,6 +13,7 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 add_executable(sentinel
     src/main.cpp
     src/cli_parser.cpp
+    src/tcp_connector.cpp
 )
 
 enable_testing()
@@ -29,4 +30,19 @@ target_include_directories(cli_parser_test PRIVATE
 add_test(
     NAME cli_parser_test
     COMMAND cli_parser_test
+)
+
+
+add_executable(tcp_connector_test
+    tests/tcp_connector_test.cpp
+    src/tcp_connector.cpp
+)
+
+target_include_directories(tcp_connector_test PRIVATE
+    ${CMAKE_SOURCE_DIR}/include
+)
+
+add_test(
+    NAME tcp_connector_test
+    COMMAND tcp_connector_test
 )
